@@ -9,11 +9,11 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 581
 RUN echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update
 
-ENV DOCKER_VERSION "1.11.1-0~xenial"
+ENV DOCKER_VERSION "1.12.3-0~xenial"
 RUN apt-get install -yq docker-engine=$DOCKER_VERSION
 
 # docker-compose
-RUN curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+RUN curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
 # clean
